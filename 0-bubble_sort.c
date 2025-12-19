@@ -2,37 +2,37 @@
 
 /**
  * bubble_sort - Sorts an array of integers in ascending order
- *               using the Bubble sort algorithm
+ *              using the Bubble sort algorithm
  * @array: Pointer to the array
- * @size: Number of elements in the array
+ * @size: Number of elements in array
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, j;
-	int temp;
+	size_t i, n;
+	int tmp;
 	int swapped;
 
 	if (array == NULL || size < 2)
 		return;
 
-	for (i = 0; i < size - 1; i++)
+	n = size;
+	swapped = 1;
+
+	while (swapped)
 	{
 		swapped = 0;
-
-		for (j = 0; j < size - i - 1; j++)
+		for (i = 0; i < n - 1; i++)
 		{
-			if (array[j] > array[j + 1])
+			if (array[i] > array[i + 1])
 			{
-				temp = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = temp;
-
-				print_array(array, size);
+				tmp = array[i];
+				array[i] = array[i + 1];
+				array[i + 1] = tmp;
 				swapped = 1;
+				print_array(array, size);
 			}
 		}
-
-		if (swapped == 0)
-			break;
+		/* After each pass, the largest element is at the end */
+		n--;
 	}
 }
