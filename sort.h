@@ -23,5 +23,6 @@ void print_array(const int *array, size_t size);
 /* Prints a doubly linked list of integers */
 void print_list(const listint_t *list);
 void bubble_sort(int *array, size_t size);
+void selection_sort(int *array, size_t size);
 
 #endif /* SORT_H */
